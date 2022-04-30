@@ -1,2 +1,2 @@
 # Game_theLastBattle_Cards
- card fighting game for terminal
+ cards fighting game for terminal
