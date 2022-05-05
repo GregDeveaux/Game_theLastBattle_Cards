@@ -1,2 +1,4 @@
 # Game_theLastBattle_Cards
- cards fighting game for terminal
+ Cards fighting game
+ 
+ >>> Play with me in the Terminal or Debug area
