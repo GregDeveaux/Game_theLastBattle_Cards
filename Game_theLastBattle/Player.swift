@@ -151,16 +151,14 @@ class Player {
     
         // Select a existing fighter in a guild
     func chooseTheFighter(of category: String, by player: Player, weapon: Bool) -> Int {
-        var num = 1
-        
-        print(" –⌽–> Guild \(player.name), Select the number of one of \(category)")
-        
         var numberOfFighter = 0
         var isDead = true
         
                
             // +++++++OPTION++++++++ list with cards ++++++++++++++++++++
         showCardsOfGuild()
+        print("\n –⌽–> Guild \(player.name), Select the number of one of \(category)")
+
         
             // We choise the fighter in the list by his number (not possible if he's dead)
         while isDead == true  {

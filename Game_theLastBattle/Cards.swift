@@ -12,18 +12,27 @@ class Cards {
     
     var name: String = ""
     
-        // name = 32 characters possible for not ruin the card
-    let maxlengthNamePossible = 32
+        // name = 35 characters possible for not ruin the card
+    let maxlengthNamePossible = 35
     
+        // place name in the middle of the card
     var nameModifiedForCard: String {
-        let lengthName = name.count
+            // add the name at the sentence
+        let sentence = "NAME : \(name)"
+        var space = " "
         
+        let lengthName = sentence.count
         let differenceOfLength = maxlengthNamePossible - lengthName
-        for _ in 1..<differenceOfLength {
-            let space = " "
-            name = name + space
+        
+        for _ in 1..<(differenceOfLength / 2) {
+            space += " "
         }
-        return name
+        
+        if !(name.count % 2 == 0) {
+            return space + sentence + space + " "
+        } else {
+            return space + sentence + space
+        }
     }
     
     var lifepoint: Int = 0
@@ -53,9 +62,9 @@ class Cards {
     var wizard1: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 1 •     °·. WIZARD .·°              |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 1 )     °·. WIZARD .·°      ( 1 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //             _-¯¯-_            //   |
@@ -86,7 +95,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -100,9 +109,9 @@ class Cards {
     var wizard2: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 2 •     °·. WIZARD .·°              |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 2 )     °·. WIZARD .·°      ( 3 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //      _-^-¯¯¯v¯¯¯¯¯¯¯-^-_      //   |
@@ -133,7 +142,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -147,9 +156,9 @@ class Cards {
     var wizard3: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 3 •     °·. WIZARD .·°              |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 3 )     °·. WIZARD .·°      ( 3 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                   __          //   |
         |   //            _--^¯¯¯  ¯¯¯¯-_    //   |
@@ -180,7 +189,7 @@ class Cards {
         |   //               ¯               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -195,9 +204,9 @@ class Cards {
     var warrior1: String { return """
 
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 1 •     °·. WARRIOR .·°             |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 1 )     °·. WARRIOR .·°     ( 1 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //              _:-·_ _          //   |
@@ -228,7 +237,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -242,9 +251,9 @@ class Cards {
     var warrior2: String { return """
 
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 2 •     °·. WARRIOR .·°             |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 2 )     °·. WARRIOR .·°     ( 2 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //              __,-·__          //   |
@@ -275,7 +284,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -288,9 +297,9 @@ class Cards {
     var warrior3: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 3 •     °·. WARRIOR .·°             |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 3 )     °·. WARRIOR .·°     ( 3 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //      _.·-⁄¨YU°-_M_i-·__       //   |
@@ -321,7 +330,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -334,9 +343,9 @@ class Cards {
     var dwarf1: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 1 •     °·. DWARF .·°               |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 1 )      °·. DWARF .·°      ( 1 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //       __––––]¯¯¯[––––__       //   |
@@ -367,7 +376,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -380,9 +389,9 @@ class Cards {
     var dwarf2: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 2 •     °·. DWARF .·°               |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 2 )      °·. DWARF .·°      ( 2 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //                               //   |
         |   //           _––¯¯√––_           //   |
@@ -413,7 +422,7 @@ class Cards {
         |   //              ¯√               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |
@@ -426,9 +435,9 @@ class Cards {
     var dwarf3: String { return """
         
         ⌽—————————————————————————————————————————⌽
-        |   _____                                 |
-        |   • 3 •     °·. DWARF .·°               |
-        |   ¯¯¯¯¯                                 |
+        |    ___                           ___    |
+        |   ( 3 )      °·. DWARF .·°      ( 3 )   |
+        |    ¯¯¯                           ¯¯¯    |
         |   ///////////////////////////////////   |
         |   //               _               //   |
         |   //      ______-¯¯ ¯¯-______      //   |
@@ -459,7 +468,7 @@ class Cards {
         |   //                               //   |
         |   ///////////////////////////////////   |
         |                                         |
-        |   NAME : \(nameModifiedForCard)|
+        |   \(nameModifiedForCard)   |
         |                                         |
         |   Life \(lifepointModifiedForCard)  .·° Heal \(healModifiedForCard) °·.  Power \(powerModifiedForCard)   |
         |                                         |

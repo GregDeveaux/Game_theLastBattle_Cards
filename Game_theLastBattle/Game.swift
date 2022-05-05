@@ -117,23 +117,22 @@ class Game {
         // +++++++OPTION++++++++ version with cards ++++++++++++++++++++
     func presentationGuildsWithCards() {
         print("""
-
-                 –•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––
-                 •––•––•–––––––––––––––––––––––•                SUMMARY OF GUILDS                 •–––––––––––––––––––––––•––•––•
-                 ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
+              
+              ––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––
+              •––•––•––––––––––––––––––––––––––––––––––––––––•                SUMMARY OF GUILDS                 •––––––––––––––––––––––––––––––––––––––––•––•––•
+              ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+              
+                The guild \(player1.name.uppercased()) is composed of :
               """)
-        print("  The guild \(player1.name.uppercased()) is composed of :")
         player1.showCardsOfGuild()
-        print("")
-        print("")
-        print("  The guild \(player2.name.uppercased()) is composed of :")
+        
+        print("\n\n The guild \(player2.name.uppercased()) is composed of :")
         player2.showCardsOfGuild()
         print("""
-
-                 –•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––
-                 ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
+              
+              ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+              ––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––•––
+              
               """)
     }
     
@@ -316,11 +315,11 @@ class Game {
         print("""
             
             
-              XXXXXX  XX   XX  XXXXXX     XXXXXX  XXXX  XXXXXXX  XX   XX  XXXXXX     XXXXXX   XXXXXX  XXXXXXX  XXXX  XX   XX   XXXXX
-                XX    XX   XX  XX         XX       XX   XX       XX   XX    XX       XX   XX  XX      XX        XX   XXX  XX  XX
-                XX    XXXXXXX  XXXX       XXXX     XX   XX  XXX  XXXXXXX    XX       XXXXXX   XXXX    XX  XXX   XX   XX X XX   XXXX
-                XX    XX   XX  XX         XX       XX   XX   XX  XX   XX    XX       XX   XX  XX      XX   XX   XX   XX  XXX      XX
-                XX    XX   XX  XXXXXX     XX      XXXX  XXXXXXX  XX   XX    XX       XXXXXX   XXXXXX  XXXXXXX  XXXX  XX   XX  XXXXX
+                          XXXXXX  XX   XX  XXXXXX     XXXXXX  XXXX  XXXXXXX  XX   XX  XXXXXX     XXXXXX   XXXXXX  XXXXXXX  XXXX  XX   XX   XXXXX
+                            XX    XX   XX  XX         XX       XX   XX       XX   XX    XX       XX   XX  XX      XX        XX   XXX  XX  XX
+                            XX    XXXXXXX  XXXX       XXXX     XX   XX  XXX  XXXXXXX    XX       XXXXXX   XXXX    XX  XXX   XX   XX X XX   XXXX
+                            XX    XX   XX  XX         XX       XX   XX   XX  XX   XX    XX       XX   XX  XX      XX   XX   XX   XX  XXX      XX
+                            XX    XX   XX  XXXXXX     XX      XXXX  XXXXXXX  XX   XX    XX       XXXXXX   XXXXXX  XXXXXXX  XXXX  XX   XX  XXXXX
             
             
             """)
@@ -329,36 +328,38 @@ class Game {
     outerLoop: while true {
         
         round += 1 // init round number 1
-        print("||||||||||||||||||||||||||||||||||||||||||||||||||||| ROUND \(round) ||||||||||||||||||||||||||||||||||||||||||||||||||||| \n")
-        
-        for _ in 1...2 {
-                // the first player begins the round
-            selectAttackOrHeal(activePlayer: player1, inactivePlayer: player2)
+        print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ROUND \(round) ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| \n")
             
-                // if player 2 win
-            if player1.guild.allFightersDead() {
-                gameOver(looser: player1)
-                andTheWinnerIs(player2)
-                break outerLoop   // we exit of loop
-            }
-                // if player 1 win
-            if player2.guild.allFightersDead() {
-                gameOver(looser: player2)
-                andTheWinnerIs(player1)
-                break outerLoop   // we exit of loop
+            for _ in 1...2 {
+                    // the first player begins the round
+                selectAttackOrHeal(activePlayer: player1, inactivePlayer: player2)
+                
+                    // if player 2 win
+                if player1.guild.allFightersDead() {
+                    gameOver(looser: player1)
+                    andTheWinnerIs(player2)
+                    break outerLoop   // we exit of loop
+                }
+                    // if player 1 win
+                if player2.guild.allFightersDead() {
+                    gameOver(looser: player2)
+                    andTheWinnerIs(player1)
+                    break outerLoop   // we exit of loop
+                }
+                
+                swap(&player1, &player2)
             }
             
-            swap(&player1, &player2)
         }
-        
-    }
     }
     
     
     
     func selectPlayAgain() -> Bool {
-        print("•••  Do you want to play again ?  •••")
-        print("•••  write Y (for Yes) or N (for No)  •••")
+        print("""
+        –⌽–> Do you want to play again ?
+        •••  write Y (for Yes) or N (for No)  •••
+        """)
         
             // Ask the players, if they play a new game
         while true {
@@ -386,34 +387,34 @@ class Game {
         // Stop fight, declare the winner and present the result of fight
     func gameOver(looser: Player) {
         
-            // we verify that all the fighters are dead in the guild of one player
-        print("\n ☠️☠️☠️ \(looser.name), all your Fighters are dead! ☠️☠️☠️")
+            // +++++++OPTION++++++++ version with cards ++++++++++++++++++++
+        presentationGuildsWithCards()
         
+            // we verify that all the fighters are dead in the guild of one player
+        print("\n ☠️☠️☠️ \(looser.name), all your Fighters are dead! ☠️☠️☠️\n")
         print("""
             
             
-              XXXXXXX    XXX    XX   XX  XXXXXX      XXXXX   XX     XX  XXXXX    XXXXXX
-              XX       XX   XX  XXX XXX  XX         XX   XX  XX     XX  XX       XX   XX
-              XX  XXX  XXXXXXX  XX X XX  XXXX       XX   XX   XX   XX   XXXX     XXXXXX
-              XX   XX  XX   XX  XX   XX  XX         XX   XX    XX XX    XX       XX  XX
-              XXXXXXX  XX   XX  XX   XX  XXXXXX      XXXXX      XXX     XXXXXXX  XX   XX
+                                      XXXXXXX    XXX    XX   XX  XXXXXX      XXXXX   XX     XX  XXXXX    XXXXXX
+                                      XX       XX   XX  XXX XXX  XX         XX   XX  XX     XX  XX       XX   XX
+                                      XX  XXX  XXXXXXX  XX X XX  XXXX       XX   XX   XX   XX   XXXX     XXXXXX
+                                      XX   XX  XX   XX  XX   XX  XX         XX   XX    XX XX    XX       XX  XX
+                                      XXXXXXX  XX   XX  XX   XX  XXXXXX      XXXXX      XXX     XXXXXXX  XX   XX
+            
+                                      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             
             
             """)
         
             // summary of the round
         print("  –⌽–> TOTAL ROUND FOR THE BATTLE: \(round)")
-        
-            // +++++++OPTION++++++++ version with cards ++++++++++++++++++++
-        presentationGuildsWithCards()
-        
         print("""
               
-        –⌽–> \(player1.name), you have infliged \(player1.guild.totalDamagesInfliged) of damages
-        –⌽–> \(player1.name), you have help your companion due to \(player1.guild.totalHealsOnYourCompanions) of heal
+          –⌽–> \(player1.name), you have infliged \(player1.guild.totalDamagesInfliged) of damages
+          –⌽–> \(player1.name), you have help your companion due to \(player1.guild.totalHealsOnYourCompanions) of heal
         
-        –⌽–> \(player2.name), you have infliged \(player2.guild.totalDamagesInfliged) of damages
-        –⌽–> \(player2.name), you have help your companion due to \(player2.guild.totalHealsOnYourCompanions) of heal
+          –⌽–> \(player2.name), you have infliged \(player2.guild.totalDamagesInfliged) of damages
+          –⌽–> \(player2.name), you have help your companion due to \(player2.guild.totalHealsOnYourCompanions) of heal
         
         """)
     }
