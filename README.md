@@ -1,5 +1,5 @@
 # Game_theLastBattle_Cards
- Cards fighting game
+## Cards fighting game
  
  >>> Play with me in the Terminal (swift) or Debug area (Xcode)
  >>> the game used "ASCII art" cards 
@@ -46,6 +46,9 @@
 >>> … 𝑻𝑯𝑬 𝑾𝑰𝑵𝑵𝑬𝑹 𝑶𝑭 𝑻𝑯𝑰𝑺 𝑳𝑨𝑺𝑻 𝑩𝑨𝑻𝑻𝑳𝑬 𝑾𝑰𝑳𝑳 𝑩𝑬𝑪𝑶𝑴𝑬 𝑻𝑯𝑬 𝑵𝑬𝑾 𝑪𝑹𝑶𝑾𝑵 𝑷𝑹𝑰𝑵𝑪𝑬𝑶𝑹 𝑷𝑹𝑰𝑵𝑪𝑬𝑺𝑺… 👑  
 >>> … 𝒀𝑶𝑼 (𝑻𝑯𝑬 𝑩𝑶𝑻𝑯 𝑷𝑳𝑨𝒀𝑬𝑹𝑺) 𝑨𝑹𝑬 𝑯𝑰𝑺 𝑩𝑶𝑻𝑯 𝑪𝑯𝑰𝑳𝑫𝑺, "𝑻𝑯𝑬 𝑮𝑨𝑴𝑬" 𝑮𝑶 𝑩𝑬𝑮𝑰𝑵 𝑺𝑶𝑶𝑵. 𝑹𝑬𝑨𝑫𝒀 𝑮𝑶! 𝑮𝑶𝑶𝑫 𝑳𝑼𝑪𝑲! 🍀 
 
+
+
+## Example of cards (9 possible fighters)
 
 ![ecran1](https://github.com/GregDeveaux/GregDeveaux/blob/main/documents/ecran1.png)
 ![ecran2](https://github.com/GregDeveaux/GregDeveaux/blob/main/documents/ecran2.png)
