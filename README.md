@@ -52,3 +52,6 @@
 
 ![ecran1](https://github.com/GregDeveaux/GregDeveaux/blob/main/documents/ecran1.png)
 ![ecran2](https://github.com/GregDeveaux/GregDeveaux/blob/main/documents/ecran2.png)
+
+<br/>
+<img height="20em" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGregDeveaux%2FGame_theLastBattle_Cards%2Ftree%2Fmain&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
